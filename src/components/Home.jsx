@@ -88,12 +88,12 @@ const Home = () => {
               View My Work
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a 
+            {/* <a 
               href="#contact" 
               className="px-6 py-3 border border-slate-200 text-slate-700 rounded-lg font-medium hover:bg-slate-50 transition-all duration-300"
             >
               Get in Touch
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
