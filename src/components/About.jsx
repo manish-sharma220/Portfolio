@@ -1,83 +1,3 @@
-// // About.jsx
-// import React, { useState } from "react";
-
-// const About = () => {
-//   const [imageError, setImageError] = useState(false);
-  
-//   const handleImageError = () => {
-//     setImageError(true);
-//   };
-
-//   return (
-//     <section id="about" className="py-20 px-4 bg-rose-50">
-//       <div className="max-w-4xl mx-auto">
-//         <div className="flex flex-col md:flex-row items-center gap-12">
-//           <div className="md:w-1/3">
-//             {imageError ? (
-//               <div className="rounded-full w-64 h-64 bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-4xl mx-auto shadow-lg">
-//                 MS
-//               </div>
-//             ) : (
-//               <img
-//                 src="https://media.licdn.com/dms/image/v2/D5603AQF8n-7QXixUIw/profile-displayphoto-shrink_400_400/B56ZUo.oPgHoAk-/0/1740149264022?e=1750291200&v=beta&t=-4cr3RI5kbQdcA4inr18gzaRnEdfgTCi5pKC1alsiRc"
-//                 alt="Manish Kumar Sharma"
-//                 className="rounded-full w-64 h-64 object-cover shadow-lg mx-auto"
-//                 onError={handleImageError}
-//               />
-//             )}
-//           </div>
-//           <div className="md:w-2/3">
-//             <h2 className="text-3xl font-medium mb-6 text-slate-700">
-//               About Me
-//             </h2>
-//             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-//               Hi there! I'm Manish Kumar Sharma, a dedicated and self-taught web
-//               developer with a deep passion for building exceptional websites
-//               and web applications. I'm currently focused on mastering Node.js,
-//               Express.js, and MongoDB, and I'm truly excited about the limitless
-//               possibilities in web development. Beyond the frontend and backend,
-//               I have a strong foundation in Data Structures and Algorithms
-//               (DSA), Database Management Systems (DBMS), Operating Systems, and
-//               Computer Networking, which gives me a solid edge in both
-//               development and problem-solving.
-//             </p>
-//             <div className="mb-6">
-//               <h3 className="text-xl font-medium text-slate-700 mb-3">
-//                 Fun Facts
-//               </h3>
-//               <ul className="space-y-2 text-slate-600">
-//                 <li>🐛 I can spend hours debugging a bug... only to realize it was a missing semicolon</li>
-//                 <li>🎬 Movie buff who can quote entire scenes from memory</li>
-//                 <li>🏏 Cricket fan who never misses an India match — even if it means checking the score during class 😅</li>
-//               </ul>
-//             </div>
-//             <div>
-//               <h3 className="text-xl font-medium text-slate-700 mb-3">
-//                 Values
-//               </h3>
-//               <div className="flex flex-wrap gap-2">
-//                 <span className="bg-white px-4 py-2 rounded-full text-sm text-slate-600">
-//                   Empathy
-//                 </span>
-//                 <span className="bg-white px-4 py-2 rounded-full text-sm text-slate-600">
-//                   Collaboration
-//                 </span>
-//                 <span className="bg-white px-4 py-2 rounded-full text-sm text-slate-600">
-//                   Continuous Learning
-//                 </span>
-//                 <span className="bg-white px-4 py-2 rounded-full text-sm text-slate-600">
-//                   Accessibility
-//                 </span>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default About;
 
 
 
@@ -90,7 +10,7 @@ import {
   BookOpen,
   Users,
   Zap,
-  Trophy, // ✅ Use Trophy instead of Cricket
+  Trophy, 
 } from "lucide-react";
 
 const About = () => {

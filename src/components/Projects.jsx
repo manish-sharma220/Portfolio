@@ -1,47 +1,3 @@
-// // Projects.jsx
-// import React from 'react';
-// import ProjectCard from './ProjectCard';
-
-// const Projects = () => {
-//   const projects = [
-//     {
-//         title: "Campus Notes Pro – Student Resource Platform",
-//         image: "/api/placeholder/600/400", // Replace with actual image path if available
-//         description: "Developed a full-stack platform for students to upload, manage, and access academic notes easily.",
-//         tools: "React, Node.js, Express, MongoDB, Redux",
-//         role: "Full-Stack Developer"
-//       },
-//       {
-//         title: "Event Management Platform",
-//         image: "/api/placeholder/600/400", // Replace with actual image path if available
-//         description: "Built a platform to streamline event creation, registrations, and real-time updates for users and organizers.",
-//         tools: "React, Node.js, Express, MongoDB, Tailwind CSS",
-//         role: "Full-Stack Developer"
-//       },
-//       {
-//         title: "Weather Forecast App",
-//         image: "/api/placeholder/600/400", // Replace with actual image if available
-//         description: "Developed a responsive app that provides real-time weather updates, forecasts, and alerts based on user location.",
-//         tools: "HTML, CSS, JavaScript, OpenWeatherMap API",
-//         role: "Frontend Developer"
-//       }
-//   ];
-
-//   return (
-//     <section id="projects" className="py-20 px-4 bg-white">
-//       <div className="max-w-6xl mx-auto">
-//         <h2 className="text-3xl font-medium mb-12 text-center text-slate-700">Selected Projects</h2>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-//           {projects.map((project, index) => (
-//             <ProjectCard key={index} {...project} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Projects;
 
 
 
@@ -59,7 +15,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Campus Notes Pro – Student Resource Platform",
-      image: "https://images.unsplash.com/photo-1517842645767-c639042777db?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://raw.githubusercontent.com/manish-sharma220/Portfolio/23dbaff18fb030150a09bcb9b3419ea59a199847/Screenshot%202025-04-19%20190642.png",
       description: "Developed a full-stack platform for students to upload, manage, and access academic notes easily. Implemented user authentication, file management, and search functionality.",
       tools: "React, Node.js, Express, MongoDB, Redux",
       role: "Full-Stack Developer",
@@ -69,21 +25,10 @@ const Projects = () => {
       date: "2024",
       featured: true
     },
-    {
-      title: "Event Management Platform",
-      image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Built a platform to streamline event creation, registrations, and real-time updates for users and organizers. Integrated payment gateway and email notification system.",
-      tools: "React, Node.js, Express, MongoDB, Tailwind CSS",
-      role: "Full-Stack Developer",
-      category: "Fullstack",
-      demoLink: "https://event-platform.example.com",
-      codeLink: "https://github.com/username/event-platform",
-      date: "2023",
-      featured: true
-    },
+   
     {
       title: "Weather Forecast App",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      image: "https://github.com/manish-sharma220/Whether-App-/blob/main/Screenshot%202025-04-19%20191654.png?raw=true",
       description: "Developed a responsive app that provides real-time weather updates, forecasts, and alerts based on user location. Implemented geolocation services and interactive weather maps.",
       tools: "HTML, CSS, JavaScript, OpenWeatherMap API",
       role: "Frontend Developer",
@@ -92,37 +37,8 @@ const Projects = () => {
       codeLink: "https://github.com/username/weather-app",
       date: "2023"
     },
-    {
-      title: "Personal Finance Tracker",
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Created an application to help users track expenses, set budgets, and visualize spending patterns. Implemented data visualization and export functionality.",
-      tools: "React, Firebase, Chart.js, Material UI",
-      role: "Frontend Developer",
-      category: "Frontend",
-      demoLink: "https://finance-tracker.example.com",
-      codeLink: "https://github.com/username/finance-tracker",
-      date: "2022"
-    },
-    {
-      title: "Task Management API",
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Designed and implemented a RESTful API for task management with features like user authentication, task CRUD operations, and team collaboration.",
-      tools: "Node.js, Express, MongoDB, JWT, Jest",
-      role: "Backend Developer",
-      category: "Backend",
-      codeLink: "https://github.com/username/task-api",
-      date: "2022"
-    },
-    {
-      title: "E-commerce Mobile App",
-      image: "https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-      description: "Developed a cross-platform mobile application for an e-commerce store with features like product browsing, cart management, and secure checkout.",
-      tools: "React Native, Redux, Firebase, Stripe",
-      role: "Mobile Developer",
-      category: "Mobile",
-      demoLink: "https://ecommerce-app.example.com",
-      date: "2023"
-    }
+   
+  
   ];
 
   const categories = ['All', 'Frontend', 'Backend', 'Fullstack', 'Mobile'];
