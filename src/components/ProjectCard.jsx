@@ -1,30 +1,4 @@
-// // ProjectCard.jsx
-// import React from 'react';
 
-// const ProjectCard = ({ title, image, description, tools, role }) => {
-//   return (
-//     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-//       <img src={image} alt={title} className="w-full h-48 object-cover" />
-//       <div className="p-6">
-//         <h3 className="text-xl font-medium text-slate-700 mb-2">{title}</h3>
-//         <p className="text-slate-600 mb-4">{description}</p>
-//         <div className="mb-3">
-//           <span className="text-sm font-medium text-slate-700">Tools: </span>
-//           <span className="text-sm text-slate-600">{tools}</span>
-//         </div>
-//         <div className="mb-4">
-//           <span className="text-sm font-medium text-slate-700">My Role: </span>
-//           <span className="text-sm text-slate-600">{role}</span>
-//         </div>
-//         <button className="text-blue-600 hover:text-blue-700 font-medium text-sm">
-//           View Case Study →
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ProjectCard;
 
 import React, { useState } from 'react';
 import { Github, ExternalLink, Code, Users, Calendar } from 'lucide-react';
