@@ -1,12 +1,10 @@
-// tailwind.config.js
-export default {
-    content: [
-      './index.html',
-      './src/**/*.{js,ts,jsx,tsx}',  // Adjust path based on your project structure
-    ],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
-  };
+/** @type {import('tailwindcss').Config} */
+export const content = [
+  "./index.html",
+  "./src/**/*.{js,ts,jsx,tsx}",
+];
+export const theme = {
+  extend: {},
+};
+export const plugins = [];
   
