@@ -12,6 +12,7 @@ import {
   Zap,
   Trophy, 
 } from "lucide-react";
+import profileImage from "../assets/images/manishPassportSizePicture.jpeg";
 
 const About = () => {
   const [imageError, setImageError] = useState(false);
@@ -51,7 +52,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="py-24 px-6 bg-gradient-to-br from-rose-50 via-slate-50 to-rose-50 relative overflow-hidden"
+      className="py-24 px-6 bg-gradient-to-br from-rose-50 via-slate-50 to-rose-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300"
     >
       <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-rose-200 opacity-30 blur-3xl"></div>
       <div className="absolute -bottom-32 -left-32 w-96 h-96 rounded-full bg-blue-200 opacity-30 blur-3xl"></div>
@@ -83,7 +84,7 @@ const About = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                   <div className="absolute inset-0 bg-slate-900 opacity-0 group-hover:opacity-20 transition-opacity duration-300 z-10"></div>
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D5603AQF8n-7QXixUIw/profile-displayphoto-shrink_400_400/B56ZUo.oPgHoAk-/0/1740149264022?e=1750291200&v=beta&t=-4cr3RI5kbQdcA4inr18gzaRnEdfgTCi5pKC1alsiRc"
+                    src={profileImage}
                     alt="Manish Kumar Sharma"
                     className="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={handleImageError}

@@ -1,10 +1,12 @@
 // Navbar.jsx
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, toggleTheme, isDark } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,13 +29,17 @@ const Navbar = () => {
     { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
+    { href: "#certificates", label: "Certificates" },
+    { href: "#social-links", label: "Connect" },
     { href: "#resume", label: "Resume" },
     { href: "#contact", label: "Contact" }
   ];
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      isScrolled 
+        ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-sm' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
@@ -41,37 +47,49 @@ const Navbar = () => {
           <a 
             href="#home" 
             className={`text-2xl font-bold transition-colors ${
-              isScrolled ? 'text-blue-600' : 'text-slate-800'
+              isScrolled 
+                ? 'text-blue-600 dark:text-blue-400' 
+                : 'text-slate-800 dark:text-white'
             }`}
           >
             Welcome
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link, index) => (
               <a 
                 key={index}
                 href={link.href} 
-                className="text-slate-600 hover:text-blue-600 font-medium transition-colors duration-300 text-sm uppercase tracking-wide relative group"
+                className="text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors duration-300 text-sm uppercase tracking-wide relative group"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 h-0.5 bg-blue-600 w-0 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 h-0.5 bg-blue-600 dark:bg-blue-400 w-0 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
-            <a 
-              href="#contact" 
-              className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium text-sm"
+            
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-slate-100 dark:bg-gray-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-700 transition-all duration-300"
+              aria-label="Toggle theme"
             >
-              Let's Talk
-            </a>
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button & theme toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-slate-100 dark:bg-gray-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-gray-700 transition-all duration-300"
+              aria-label="Toggle theme"
+            >
+              {isDark ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
             <button 
               onClick={toggleMenu}
-              className="p-2 rounded-md text-slate-600 hover:text-blue-600 focus:outline-none"
+              className="p-2 rounded-md text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -85,27 +103,18 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg">
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-lg border-t dark:border-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link, index) => (
               <a
                 key={index}
                 href={link.href}
-                className="block px-3 py-4 text-base font-medium text-slate-600 hover:text-blue-600 border-b border-gray-100"
+                className="block px-3 py-4 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 border-b border-gray-100 dark:border-gray-800"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <div className="py-4">
-              <a 
-                href="#contact" 
-                className="block w-full text-center px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Let's Talk
-              </a>
-            </div>
           </div>
         </div>
       )}

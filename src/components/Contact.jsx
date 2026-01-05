@@ -29,9 +29,15 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate API call with delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', data);
+      // Create mailto link with form data
+      const subject = encodeURIComponent(data.subject);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`
+      );
+      const mailtoLink = `mailto:sharmamanishkumar558@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Open default email client
+      window.location.href = mailtoLink;
       
       // Reset form after submission
       reset();
@@ -48,15 +54,15 @@ const Contact = () => {
     { 
       icon: <Linkedin className="w-5 h-5" />, 
       label: 'LinkedIn', 
-      value: 'linkedin.com/in/manish-kumar-sharma-558',
-      href: 'https://linkedin.com/in/manish-kumar-sharma-558',
+      value: 'linkedin.com/in/manish-kumar-sharma-a29312288',
+      href: 'https://www.linkedin.com/in/manish-kumar-sharma-a29312288/',
       color: 'text-blue-600'
     },
     { 
       icon: <Github className="w-5 h-5" />, 
       label: 'GitHub', 
-      value: 'github.com/sharmamanishkumar',
-      href: 'https://github.com/sharmamanishkumar',
+      value: 'github.com/manish-sharma220',
+      href: 'https://github.com/manish-sharma220',
       color: 'text-gray-800'
     },
     { 
@@ -69,8 +75,8 @@ const Contact = () => {
     { 
       icon: <Phone className="w-5 h-5" />, 
       label: 'Phone', 
-      value: '+91 7224853586',
-      href: 'tel:+917224853586',
+      value: '+91 6372676994',
+      href: 'tel:+916372676994',
       color: 'text-green-600'
     },
     { 
@@ -169,8 +175,8 @@ const Contact = () => {
                 <h4 className="text-base font-medium text-slate-700 mb-4">Connect with me</h4>
                 <div className="flex gap-4">
                   {[
-                    { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/in/manish-kumar-sharma-558', color: 'bg-blue-600' },
-                    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/sharmamanishkumar', color: 'bg-gray-800' },
+                    { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/in/manish-kumar-sharma-a29312288/', color: 'bg-blue-600' },
+                    { icon: <Github className="w-5 h-5" />, href: 'https://github.com/manish-sharma220', color: 'bg-gray-800' },
                     { icon: <Mail className="w-5 h-5" />, href: 'mailto:sharmamanishkumar558@gmail.com', color: 'bg-red-500' }
                   ].map((social, index) => (
                     <motion.a
