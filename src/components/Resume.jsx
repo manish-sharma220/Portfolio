@@ -85,10 +85,10 @@ const Resume = () => {
   const SkillBar = ({ name, level, index }) => (
     <div className="mb-4" style={getAnimationDelay(index)}>
       <div className="flex justify-between mb-1">
-        <span className="text-slate-700 font-medium">{name}</span>
-        <span className="text-slate-500">{level}%</span>
+        <span className="text-slate-700 dark:text-slate-300 font-medium">{name}</span>
+        <span className="text-slate-500 dark:text-slate-400">{level}%</span>
       </div>
-      <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
+      <div className="h-2 bg-slate-100 dark:bg-gray-600 rounded-full overflow-hidden">
         <div 
           className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full transition-all duration-1000"
           style={{ 
@@ -110,15 +110,15 @@ const Resume = () => {
       style={getAnimationDelay(index)}
     >
       {/* Timeline connector */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-slate-200 dark:bg-gray-600"></div>
       
       {/* Timeline dot */}
-      <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-blue-500 -translate-x-1/2 z-10"></div>
+      <div className="absolute left-0 top-1 w-3 h-3 rounded-full bg-blue-500 dark:bg-blue-400 -translate-x-1/2 z-10"></div>
       
-      <h4 className="text-xl font-medium text-slate-800">{title}</h4>
-      <p className="text-slate-600 font-medium">{subtitle}</p>
+      <h4 className="text-lg sm:text-xl font-medium text-slate-800 dark:text-white">{title}</h4>
+      <p className="text-slate-600 dark:text-slate-300 font-medium">{subtitle}</p>
       
-      <div className="flex flex-wrap gap-4 mt-1 mb-3 text-sm text-slate-500">
+      <div className="flex flex-wrap gap-4 mt-1 mb-3 text-sm text-slate-500 dark:text-slate-400">
         {date && (
           <div className="flex items-center gap-1">
             <Calendar size={14} />
@@ -142,7 +142,7 @@ const Resume = () => {
   const ProjectItem = ({ title, technologies, date, location, points, index }) => (
     <TimelineItem 
       title={title}
-      subtitle={<span className="text-blue-600">{technologies}</span>}
+      subtitle={<span className="text-blue-600 dark:text-blue-400">{technologies}</span>}
       date={date}
       location={location}
       index={index}
@@ -150,9 +150,9 @@ const Resume = () => {
       <ul className="mt-2 space-y-2">
         {points.map((point, i) => (
           <li key={i} className="flex gap-2">
-            <ChevronRight size={18} className="flex-shrink-0 text-blue-500 mt-1" />
+            <ChevronRight size={16} className="flex-shrink-0 text-blue-500 dark:text-blue-400 mt-1" />
             <span 
-              className="text-slate-600"
+              className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"
               dangerouslySetInnerHTML={{ __html: point }}
             />
           </li>
@@ -232,12 +232,12 @@ const Resume = () => {
           {/* Main content */}
           <div className="flex-1">
             {/* Education Section */}
-            <div className={`bg-white rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'education' ? 'block' : 'hidden'}`}>
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'education' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400">
                   <GraduationCap size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">Education</h3>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Education</h3>
               </div>
               
               <div className="space-y-8">
@@ -247,10 +247,10 @@ const Resume = () => {
                   date="2023 - 2026"
                   index={0}
                 >
-                  <div className="mt-2 p-3 bg-blue-50 rounded-lg">
+                  <div className="mt-2 p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-700 font-medium">CGPA</span>
-                      <span className="text-blue-600 font-bold">7.8</span>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium">CGPA</span>
+                      <span className="text-blue-600 dark:text-blue-400 font-bold">7.8</span>
                     </div>
                   </div>
                 </TimelineItem>
@@ -261,10 +261,10 @@ const Resume = () => {
                   date="2019 - 2022"
                   index={1}
                 >
-                  <div className="mt-2 p-3 bg-blue-50 rounded-lg">
+                  <div className="mt-2 p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-700 font-medium">CGPA</span>
-                      <span className="text-blue-600 font-bold">7.74</span>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium">CGPA</span>
+                      <span className="text-blue-600 dark:text-blue-400 font-bold">7.74</span>
                     </div>
                   </div>
                 </TimelineItem>
@@ -272,74 +272,82 @@ const Resume = () => {
             </div>
             
             {/* Projects Section */}
-            <div className={`bg-white rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'projects' ? 'block' : 'hidden'}`}>
-              <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
-                  <Code size={24} />
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-4 sm:p-6 lg:p-8 mb-8 transition-opacity duration-300 ${activeSection === 'projects' ? 'block' : 'hidden'}`}>
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400">
+                  <Code size={20} className="sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">Projects</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white">Projects</h3>
               </div>
               
-              <div className="space-y-2">
+              <div className="space-y-6 sm:space-y-8">
                 <ProjectItem 
-                  title="Event Management Website"
-                  technologies="React, Express.js, MySQL"
-                  date="Nov 2024"
-                  location="Bhopal, Madhya Pradesh"
+                  title="Campus Notes Platform"
+                  technologies="React, Node.js, Express, MongoDB, File Upload"
+                  date="2024"
+                  location="Educational Platform"
                   index={0}
                   points={[
-                    "Developed a responsive event management website for planning, managing, and booking events",
-                    "<strong>Vendor Search</strong>: Search vendors by city, service type, budget, and ratings",
-                    "<strong>Active Venues</strong>: Displays a list of active venues with details",
-                    "<strong>Dynamic Vendor Details</strong>: View detailed vendor information by clicking on the venue"
+                    "Student resource platform for uploading, managing, and accessing academic notes",
+                    "<strong>File Management</strong>: Upload, organize, and categorize academic documents",
+                    "<strong>Search Functionality</strong>: Advanced search and filtering for easy note discovery",
+                    "<strong>Collaborative Sharing</strong>: Share notes with classmates and study groups",
+                    "<strong>User Profiles</strong>: Personalized dashboards for students and educators"
                   ]}
                 />
                 
                 <ProjectItem 
-                  title="Weather App"
-                  technologies="HTML5, CSS3, JavaScript, OpenWeatherMap API"
-                  date="May 2024"
+                  title="Event Management Website"
+                  technologies="React, Express.js, MySQL, JWT Authentication"
+                  date="2024"
+                  location="Business Application"
                   index={1}
                   points={[
-                    "Created a web app providing real-time weather updates",
-                    "<strong>Search Functionality</strong>: Users can search for temperature information by city",
-                    "<strong>Real-time Updates</strong>: Temperature data fetched from OpenWeatherMap API and displayed dynamically"
+                    "Comprehensive event planning and booking platform with vendor management",
+                    "<strong>Vendor Search</strong>: Advanced filtering by city, service type, budget, and ratings",
+                    "<strong>Venue Management</strong>: Display active venues with detailed information",
+                    "<strong>Dynamic Details</strong>: Interactive vendor profiles with booking capabilities",
+                    "<strong>Event Planning</strong>: End-to-end event management and coordination tools"
                   ]}
                 />
-                
+
                 <ProjectItem 
-                  title="Amazon Frontpage Replica"
-                  technologies="HTML, CSS"
+                  title="E-Learning Platform"
+                  technologies="React, Node.js, Express, MongoDB, JWT Authentication"
                   date="2024"
+                  location="Full-Stack Development"
                   index={2}
                   points={[
-                    "Built a replica of Amazon's homepage layout and functionality",
-                    "<strong>User-friendly Navigation</strong>: Easy-to-navigate layout similar to Amazon's homepage"
+                    "Comprehensive e-learning platform with course management and user authentication",
+                    "<strong>Course Management</strong>: Create, edit, and organize educational content",
+                    "<strong>Progress Tracking</strong>: Monitor student learning progress and achievements",
+                    "<strong>Interactive Modules</strong>: Engaging learning experiences with modern UI/UX",
+                    "<strong>Secure Authentication</strong>: JWT-based user authentication and authorization"
                   ]}
                 />
               </div>
             </div>
             
             {/* Skills Section */}
-            <div className={`bg-white rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'skills' ? 'block' : 'hidden'}`}>
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'skills' ? 'block' : 'hidden'}`}>
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                  <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400">
                     <Server size={24} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Technical Skills</h3>
+                  <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Technical Skills</h3>
                 </div>
                 
-                <div className="flex bg-slate-100 rounded-lg p-1">
+                <div className="flex bg-slate-100 dark:bg-gray-700 rounded-lg p-1">
                   <button 
-                    className={`px-3 py-1 text-sm rounded ${skillsView === 'visual' ? 'bg-white shadow text-blue-600' : 'text-slate-600'}`}
+                    className={`px-3 py-1 text-sm rounded ${skillsView === 'visual' ? 'bg-white dark:bg-gray-600 shadow text-blue-600 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}
                     onClick={() => setSkillsView('visual')}
                   >
                     <BarChart size={16} className="inline mr-1" />
                     Visual
                   </button>
                   <button 
-                    className={`px-3 py-1 text-sm rounded ${skillsView === 'list' ? 'bg-white shadow text-blue-600' : 'text-slate-600'}`}
+                    className={`px-3 py-1 text-sm rounded ${skillsView === 'list' ? 'bg-white dark:bg-gray-600 shadow text-blue-600 dark:text-blue-400' : 'text-slate-600 dark:text-slate-300'}`}
                     onClick={() => setSkillsView('list')}
                   >
                     <Server size={16} className="inline mr-1" />
@@ -351,7 +359,7 @@ const Resume = () => {
               {skillsView === 'visual' ? (
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-lg font-medium text-slate-700 mb-4">Programming Languages</h4>
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Programming Languages</h4>
                     <div>
                       {languageSkills.map((skill, index) => (
                         <SkillBar key={skill.name} name={skill.name} level={skill.level} index={index} />
@@ -360,7 +368,7 @@ const Resume = () => {
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-medium text-slate-700 mb-4">Technologies & Frameworks</h4>
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Technologies & Frameworks</h4>
                     <div>
                       {frameworkSkills.map((skill, index) => (
                         <SkillBar key={skill.name} name={skill.name} level={skill.level} index={index} />
@@ -369,7 +377,7 @@ const Resume = () => {
                   </div>
                   
                   <div>
-                    <h4 className="text-lg font-medium text-slate-700 mb-4">Developer Tools</h4>
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">Developer Tools</h4>
                     <div className="flex flex-wrap gap-3">
                       {['GitHub', 'VS Code', 'PyCharm'].map((tool, index) => (
                         <div 
@@ -387,33 +395,33 @@ const Resume = () => {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-slate-50 p-5 rounded-xl">
-                    <h4 className="text-lg font-medium text-slate-700 mb-3">Languages</h4>
+                  <div className="bg-slate-50 dark:bg-gray-700 p-5 rounded-xl">
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-3">Languages</h4>
                     <div className="flex flex-wrap gap-2">
                       {languageSkills.map((skill, index) => (
-                        <span key={skill.name} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
+                        <span key={skill.name} className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">
                           {skill.name}
                         </span>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="bg-slate-50 p-5 rounded-xl">
-                    <h4 className="text-lg font-medium text-slate-700 mb-3">Technologies/Frameworks</h4>
+                  <div className="bg-slate-50 dark:bg-gray-700 p-5 rounded-xl">
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-3">Technologies/Frameworks</h4>
                     <div className="flex flex-wrap gap-2">
                       {frameworkSkills.map((skill, index) => (
-                        <span key={skill.name} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
+                        <span key={skill.name} className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">
                           {skill.name}
                         </span>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="bg-slate-50 p-5 rounded-xl md:col-span-2">
-                    <h4 className="text-lg font-medium text-slate-700 mb-3">Developer Tools</h4>
+                  <div className="bg-slate-50 dark:bg-gray-700 p-5 rounded-xl md:col-span-2">
+                    <h4 className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-3">Developer Tools</h4>
                     <div className="flex flex-wrap gap-2">
                       {['GitHub', 'VS Code', 'PyCharm'].map((tool) => (
-                        <span key={tool} className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">
+                        <span key={tool} className="bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm">
                           {tool}
                         </span>
                       ))}
@@ -424,206 +432,130 @@ const Resume = () => {
             </div>
             
             {/* Certifications Section */}
-            <div className={`bg-white rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'certifications' ? 'block' : 'hidden'}`}>
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'certifications' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400">
                   <Award size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">Certifications</h3>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Certifications</h3>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
                   {
+                    title: "IBM SkillsBuild Front-end Web Development",
+                    platform: "IBM SkillsBuild",
+                    icon: <BookOpen size={24} />,
+                    link: "https://drive.google.com/file/d/1qpsuOtCUpThtnfDTBnYAhkS6UcY1g3kZ/view?usp=drivesdk",
+                    color: "blue"
+                  },
+                  {
                     title: "Fundamentals of Java Programming",
                     platform: "Coursera",
-                    icon: <BookOpen size={24} />
+                    icon: <Code size={24} />,
+                    link: "https://drive.google.com/file/d/1rH3tgeoWepbwPtrAk32mjB8WEjAR7IdF/view?usp=drivesdk",
+                    color: "orange"
                   },
                   {
-                    title: "Python",
-                    platform: "Coursera",
-                    icon: <Code size={24} />
+                    title: "Python Crash Course",
+                    platform: "Google",
+                    icon: <Server size={24} />,
+                    link: "https://drive.google.com/file/d/1ZwlwoWD0a9BxCWtFHTvdP01kBdM1Goxe/view?usp=drivesdk",
+                    color: "green"
                   },
                   {
-                    title: "Git and GitHub",
-                    platform: "Coursera",
-                    icon: <Server size={24} />
+                    title: "Git & GitHub",
+                    platform: "Google",
+                    icon: <Award size={24} />,
+                    link: "https://drive.google.com/file/d/1Qj6JssS2IRPKsLJjJfWlcKkTRwQzE-On/view?usp=drivesdk",
+                    color: "purple"
                   }
                 ].map((cert, index) => (
-                  <div 
+                  <a 
                     key={index}
-                    className={`bg-slate-50 p-6 rounded-xl border border-slate-100 transition-all duration-700 hover:shadow-lg hover:translate-y-[-4px] group ${
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block p-6 rounded-xl border transition-all duration-700 hover:shadow-lg hover:translate-y-[-4px] group cursor-pointer ${
                       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                    } ${
+                      cert.color === 'blue' ? 'bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-700' :
+                      cert.color === 'orange' ? 'bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 border-orange-200 dark:border-orange-800 hover:border-orange-300 dark:hover:border-orange-700' :
+                      cert.color === 'green' ? 'bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800 hover:border-green-300 dark:hover:border-green-700' :
+                      'bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border-purple-200 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-700'
                     }`}
                     style={getAnimationDelay(index)}
                   >
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 text-blue-600 mb-4">
+                    <div className={`flex items-center justify-center w-12 h-12 rounded-full mb-4 ${
+                      cert.color === 'blue' ? 'bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400' :
+                      cert.color === 'orange' ? 'bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400' :
+                      cert.color === 'green' ? 'bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400' :
+                      'bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400'
+                    }`}>
                       {cert.icon}
                     </div>
-                    <h4 className="text-lg font-medium text-slate-800 mb-2">{cert.title}</h4>
-                    <p className="text-slate-600 flex items-center">
-                      {cert.platform}
-                      <ArrowUpRight size={14} className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <h4 className="text-lg font-medium text-slate-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{cert.title}</h4>
+                    <p className="text-slate-600 dark:text-slate-300 flex items-center justify-between">
+                      <span>{cert.platform}</span>
+                      <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity text-blue-500" />
                     </p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
             
             {/* Coding Activity Section */}
-            <div className={`bg-white rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'coding' ? 'block' : 'hidden'}`}>
+            <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 mb-8 transition-opacity duration-300 ${activeSection === 'coding' ? 'block' : 'hidden'}`}>
               <div className="flex items-center gap-3 mb-8">
-                <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-400">
                   <Monitor size={24} />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-800">Coding Activity</h3>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Coding Activity</h3>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {/* LeetCode */}
-                <div className={`bg-gradient-to-br from-orange-500 to-yellow-600 text-white p-6 rounded-xl transition-all duration-700 ${
+                <div className={`text-center p-6 bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 rounded-xl border border-orange-200 dark:border-orange-800 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`} style={getAnimationDelay(0)}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-white/20 rounded-lg">
-                        {codingStats.leetcode.loading ? <Loader size={24} className="animate-spin" /> : <Code size={24} />}
-                      </div>
-                      <h4 className="text-xl font-medium">LeetCode</h4>
-                      {codingStats.leetcode.loading && <span className="text-xs text-orange-200">Loading...</span>}
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold">{codingStats.leetcode.totalSolved}+</div>
-                      <div className="text-orange-100 text-sm">Problems</div>
-                    </div>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 mx-auto mb-4">
+                    <Code size={24} />
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between">
-                      <span className="text-orange-100">Easy:</span>
-                      <span className="font-medium">{codingStats.leetcode.easySolved}+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-orange-100">Medium:</span>
-                      <span className="font-medium">{codingStats.leetcode.mediumSolved}+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-orange-100">Hard:</span>
-                      <span className="font-medium">{codingStats.leetcode.hardSolved}+</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <div className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                      Rank: ~{codingStats.leetcode.ranking.toLocaleString()}
-                    </div>
-                    {codingStats.leetcode.error && (
-                      <div className="text-xs text-orange-200">📡 Live</div>
-                    )}
-                  </div>
+                  <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">LeetCode</h4>
+                  <div className="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-1">{codingStats.leetcode.totalSolved}+</div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">Problems Solved</p>
                 </div>
 
                 {/* GeeksforGeeks */}
-                <div className={`bg-gradient-to-br from-green-500 to-emerald-600 text-white p-6 rounded-xl transition-all duration-700 ${
+                <div className={`text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl border border-green-200 dark:border-green-800 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`} style={getAnimationDelay(1)}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-white/20 rounded-lg">
-                        <Trophy size={24} />
-                      </div>
-                      <h4 className="text-xl font-medium">GeeksforGeeks</h4>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold">100+</div>
-                      <div className="text-green-100 text-sm">Problems</div>
-                    </div>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 mx-auto mb-4">
+                    <Trophy size={24} />
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between">
-                      <span className="text-green-100">School:</span>
-                      <span className="font-medium">30+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-green-100">Basic:</span>
-                      <span className="font-medium">40+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-green-100">Easy:</span>
-                      <span className="font-medium">25+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-green-100">Medium:</span>
-                      <span className="font-medium">5+</span>
-                    </div>
-                  </div>
-                  <div className="bg-white/20 px-3 py-1 rounded-full text-sm inline-block">
-                    Institute Rank: Top 10%
-                  </div>
+                  <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">GeeksforGeeks</h4>
+                  <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-1">100+</div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">Problems Solved</p>
                 </div>
 
                 {/* CodeChef */}
-                <div className={`bg-gradient-to-br from-purple-500 to-pink-600 text-white p-6 rounded-xl transition-all duration-700 ${
+                <div className={`text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl border border-purple-200 dark:border-purple-800 transition-all duration-700 ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                 }`} style={getAnimationDelay(2)}>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2 bg-white/20 rounded-lg">
-                        {codingStats.codechef.loading ? <Loader size={24} className="animate-spin" /> : <Award size={24} />}
-                      </div>
-                      <h4 className="text-xl font-medium">CodeChef</h4>
-                      {codingStats.codechef.loading && <span className="text-xs text-purple-200">Loading...</span>}
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold">50+</div>
-                      <div className="text-purple-100 text-sm">Problems</div>
-                    </div>
+                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 mx-auto mb-4">
+                    <Award size={24} />
                   </div>
-                  <div className="space-y-2 mb-4">
-                    <div className="flex justify-between">
-                      <span className="text-purple-100">Current Rating:</span>
-                      <span className="font-medium">{codingStats.codechef.rating}+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-purple-100">Max Rating:</span>
-                      <span className="font-medium">{codingStats.codechef.maxRating}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-purple-100">Contests:</span>
-                      <span className="font-medium">{codingStats.codechef.contestsParticipated}+</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-purple-100">Stars:</span>
-                      <span className="font-medium">{'⭐'.repeat(codingStats.codechef.stars)}</span>
-                    </div>
-                  </div>
-                  <div className="flex gap-2 items-center">
-                    <div className="bg-white/20 px-3 py-1 rounded-full text-sm">
-                      Global Rank: ~{codingStats.codechef.globalRank.toLocaleString()}
-                    </div>
-                    {codingStats.codechef.error && (
-                      <div className="text-xs text-purple-200">📡 Live</div>
-                    )}
-                  </div>
+                  <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">CodeChef</h4>
+                  <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">50+</div>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">Problems Solved</p>
                 </div>
-
               </div>
 
-              {/* Overall Statistics */}
-              <div className="mt-8 bg-slate-50 p-6 rounded-xl">
-                <h4 className="text-lg font-medium text-slate-800 mb-4">Overall Coding Statistics</h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">250+</div>
-                    <div className="text-slate-600 text-sm">Total Problems</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-600">3</div>
-                    <div className="text-slate-600 text-sm">Platforms</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">2+</div>
-                    <div className="text-slate-600 text-sm">Years Active</div>
-                  </div>
-                </div>
+              {/* Overall Summary */}
+              <div className="mt-8 text-center p-6 bg-slate-50 dark:bg-gray-700 rounded-xl">
+                <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-4">Total Coding Activity</h4>
+                <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">{codingStats.leetcode.totalSolved + 100 + 50}+</div>
+                <p className="text-slate-600 dark:text-slate-400">Problems Solved Across All Platforms</p>
               </div>
             </div>
           </div>

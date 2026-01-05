@@ -15,7 +15,7 @@ const Projects = () => {
   const projects = [
     {
       title: "E-Learning Platform",
-      image: "https://raw.githubusercontent.com/manish-sharma220/E-Learning/main/screenshot.png",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80",
       description: "Comprehensive e-learning platform with course management, user authentication, progress tracking, and interactive learning modules. Built with modern web technologies for seamless educational experience.",
       tools: "React, Node.js, Express, MongoDB, JWT Authentication",
       role: "Full-Stack Developer",
@@ -27,7 +27,7 @@ const Projects = () => {
     },
     {
       title: "Live Polling System",
-      image: "https://raw.githubusercontent.com/manish-sharma220/live-polling-system/main/screenshot.png",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80",
       description: "Real-time polling application with live vote counting, user authentication, poll creation and management. Features WebSocket integration for instant updates and responsive design for all devices.",
       tools: "React, Node.js, Socket.io, Express, MongoDB",
       role: "Full-Stack Developer",
@@ -39,7 +39,7 @@ const Projects = () => {
     },
     {
       title: "Campus Notes Platform",
-      image: "https://raw.githubusercontent.com/manish-sharma220/CampusNotes/main/screenshot.png",
+      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description: "Comprehensive platform for students to upload, manage, and access academic notes easily. Features user authentication, file management, search functionality, and collaborative note sharing system.",
       tools: "React, Node.js, Express, MongoDB, File Upload",
       role: "Full-Stack Developer",
@@ -51,7 +51,7 @@ const Projects = () => {
     },
     {
       title: "Event Management Website",
-      image: "https://raw.githubusercontent.com/manish-sharma220/Project-Event-Managemet/main/screenshot.png",
+      image: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
       description: "Developed a responsive event management website for planning, managing, and booking events. Features vendor search by city, service type, budget, and ratings with dynamic vendor details.",
       tools: "React, Express.js, MySQL, JWT Authentication",
       role: "Full-Stack Developer",
@@ -63,7 +63,7 @@ const Projects = () => {
     },
     {
       title: "Weather Forecast App",
-      image: "https://github.com/manish-sharma220/Whether-App-/blob/main/Screenshot%202025-04-19%20191654.png?raw=true",
+      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description: "Responsive weather application providing real-time weather updates, forecasts, and location-based weather information. Integrated with OpenWeatherMap API for accurate weather data.",
       tools: "HTML5, CSS3, JavaScript, OpenWeatherMap API",
       role: "Frontend Developer",
@@ -75,7 +75,7 @@ const Projects = () => {
     },
     {
       title: "Amazon Homepage Clone",
-      image: "https://raw.githubusercontent.com/manish-sharma220/amazon-clone/main/screenshot.png",
+      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       description: "Pixel-perfect replica of Amazon's homepage with responsive design, interactive navigation, product showcase, and modern UI components. Built with pure HTML and CSS.",
       tools: "HTML5, CSS3, Responsive Design",
       role: "Frontend Developer",

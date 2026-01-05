@@ -31,6 +31,32 @@ const ProjectCard = ({
     return colorMap[category] || 'bg-slate-100 text-slate-700 border-slate-200';
   };
   
+  // Generate project-specific fallback design
+  const getProjectFallback = (title) => {
+    const projectIcons = {
+      'E-Learning Platform': '📚',
+      'Live Polling System': '📊',
+      'Campus Notes Platform': '📝',
+      'Event Management Website': '🎉',
+      'Weather Forecast App': '🌤️',
+      'Amazon Homepage Clone': '🛒'
+    };
+    
+    const projectColors = {
+      'E-Learning Platform': 'from-blue-400 to-indigo-600',
+      'Live Polling System': 'from-green-400 to-emerald-600',
+      'Campus Notes Platform': 'from-purple-400 to-pink-600',
+      'Event Management Website': 'from-orange-400 to-red-600',
+      'Weather Forecast App': 'from-cyan-400 to-blue-600',
+      'Amazon Homepage Clone': 'from-yellow-400 to-orange-600'
+    };
+    
+    return {
+      icon: projectIcons[title] || '💻',
+      gradient: projectColors[title] || 'from-slate-400 to-slate-600'
+    };
+  };
+  
   // Create array of tools from comma-separated string
   const toolsArray = tools.split(',').map(tool => tool.trim());
   
@@ -58,10 +84,10 @@ const ProjectCard = ({
           <h3 className="text-lg sm:text-xl font-bold text-white leading-tight">{title}</h3>
         </div>
         {imageError ? (
-          <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-            <div className="text-center">
-              <Code size={32} className="mx-auto text-slate-400 mb-2" />
-              <p className="text-slate-500 text-sm font-medium">{title}</p>
+          <div className={`w-full h-full bg-gradient-to-br ${getProjectFallback(title).gradient} flex items-center justify-center`}>
+            <div className="text-center text-white">
+              <div className="text-4xl mb-2">{getProjectFallback(title).icon}</div>
+              <p className="text-white/90 text-sm font-medium px-4">{title}</p>
             </div>
           </div>
         ) : (
