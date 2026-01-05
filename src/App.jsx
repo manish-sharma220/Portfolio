@@ -1,6 +1,5 @@
 // App.jsx
 import React from 'react';
-<<<<<<< HEAD
 import { ThemeProvider } from './contexts/ThemeContext';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -30,13 +29,6 @@ const App = () => {
         </footer>
       </div>
     </ThemeProvider>
-=======
-
-
-const App = () => {
-  return (
-     <h1>hii</h1>
->>>>>>> 7d04d835c3f6e0c0fc6be2af422f2c5aa99162e0
   );
 };
 
