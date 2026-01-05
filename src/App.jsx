@@ -5,6 +5,7 @@ import { usePageTitle, updatePageTitle } from './hooks/usePageTitle';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
+import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import SocialLinks from './components/SocialLinks';
@@ -18,7 +19,7 @@ const App = () => {
   useEffect(() => {
     // Function to update title based on current section
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'certificates', 'social-links', 'resume', 'contact'];
+      const sections = ['home', 'about', 'experience', 'projects', 'certificates', 'social-links', 'resume', 'contact'];
       const scrollPosition = window.scrollY + 100; // Offset for better detection
 
       for (const sectionId of sections) {
@@ -50,6 +51,7 @@ const App = () => {
         <main>
           <Home />
           <About />
+          <Experience />
           <Projects />
           <Certificates />
           <SocialLinks />

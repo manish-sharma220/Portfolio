@@ -210,7 +210,7 @@ const Resume = () => {
                 <p className="text-blue-50 text-sm mb-4">Download my full resume or get in touch to discuss opportunities.</p>
                 <div className="flex flex-col gap-2">
                   <a 
-                    href="https://drive.google.com/uc?export=download&id=1cKs2gz9iRmDL0hx-P_f5usFjYTd03Wwo" 
+                    href="https://drive.google.com/uc?export=download&id=1pkIutJS4RR3ATnv6hO1EgPhi5ShpkfX8" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-white dark:bg-gray-800 text-blue-600 dark:text-blue-400 py-2 px-4 rounded-lg font-medium hover:bg-blue-50 dark:hover:bg-gray-700 transition-colors"
@@ -564,7 +564,7 @@ const Resume = () => {
         {/* Download button (mobile only) */}
         <div className="text-center mt-8 lg:hidden">
           <a 
-            href="https://drive.google.com/uc?export=download&id=1cKs2gz9iRmDL0hx-P_f5usFjYTd03Wwo" 
+            href="https://drive.google.com/uc?export=download&id=1pkIutJS4RR3ATnv6hO1EgPhi5ShpkfX8" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition-all duration-300"

@@ -16,6 +16,7 @@ export const updatePageTitle = (section) => {
   const sectionTitles = {
     home: baseTitle,
     about: `About Me | ${baseTitle}`,
+    experience: `Experience | ${baseTitle}`,
     projects: `Projects | ${baseTitle}`,
     certificates: `Certificates | ${baseTitle}`,
     'social-links': `Connect | ${baseTitle}`,
